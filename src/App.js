@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable linebreak-style */
+import React, {useState} from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+
+		<form>
+			<h1>Preencha o formulário</h1>
+			<label>Nome:</label>
+			<input type="text" id="fname" value="Digite seu nome:" />
+			<button onClick="click()" id="btn">Enviar</button>
+			{/* <input onClick="botao()" type="submit" name="btEnviar" id="btn" value="Enviar" /> */}
+		</form>
+	);
 }
 
 export default App;

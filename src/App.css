@@ -1,0 +1,36 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #9ffcd7;
+    margin: 10px 10px;
+}
+
+.formulario {
+    margin-left: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: bold;
+}
+
+#btn {
+    width: 60px;
+    height: 30px;
+    background-color: #777;
+    color: #fff;
+    border-radius: 4px;
+    border-style: none;
+}
+
+input {
+    width: 200px;
+    height: 25px;
+    padding: 8px;
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: #777;
+}

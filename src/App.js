@@ -33,12 +33,14 @@ function App() {
 				onChange={(e) => setMail(e.target.value)}
 				placeholder="Digite um email:" />
 			<label>CPF:</label>
-			<input type="number"
+			<input type="text"
 				id="cpf"
 				value={clientCpf}
-				onChange={(e) => setClientCpf(e.target.value)} 
+				onChange={(e) => setClientCpf(e.target.value)}
+				maxLength="11" size="11" 
 				data-mask="999.999.999-99"
-				required placeholder="000.000.000-00" />
+				required placeholder="000.000.000-00"
+				pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" />
 
 			<button onClick={() => setEnviado(true)} >Enviar</button>
 			<p>Nome: {enviado && client + ' ' + client2}</p>

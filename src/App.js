@@ -8,6 +8,8 @@ function App() {
 	const [mail, setMail] = useState();
 	const [clientCpf, setClientCpf] = useState();
 	const [data, setData] = useState();
+	const [log, setLog] = useState();
+	const [pass, setPass] = useState();
 
 
 	const [enviado, setEnviado] = useState(false);
@@ -41,6 +43,15 @@ function App() {
 				onChange={(e) => setData(e.target.value)}
 				placeholder="dd/mm/aaaa" />
 			<br/>
+			<label>Login:</label>
+			<input type="text" id="usuario" value={log}
+				onChange={(e) => setLog(e.target.value)}
+				placeholder="Digite o Login:" />
+			<label>Senha:</label>
+			<input type="password" id="password" value={pass}
+				onChange={(e) => setPass(e.target.value)}
+				placeholder="Digite a Senha:" />
+			<br/>
 
 
 			<button onClick={() => setEnviado(true)} >Enviar</button>
@@ -48,8 +59,8 @@ function App() {
 			<p>E-mail: {enviado && mail}</p>
 			<p>CPF: {enviado && clientCpf}</p>
 			<p>Data de Nascimento: {enviado && data}</p>
-			<p>Login: </p>
-			<p>Senha: </p>
+			<p>Login: {enviado && log}</p>
+			<p>Senha: {enviado && pass}</p>
 		</>
 	);
 }

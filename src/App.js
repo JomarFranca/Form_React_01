@@ -7,6 +7,8 @@ function App() {
 	const [client2, setClient2] = useState();
 	const [mail, setMail] = useState();
 	const [clientCpf, setClientCpf] = useState();
+	const [data, setData] = useState();
+
 
 	const [enviado, setEnviado] = useState(false);
 
@@ -15,38 +17,37 @@ function App() {
 		<>
 			<h1>Cadastra-se:</h1>
 			<label>Nome:</label>
-			<input type="text" 
-				id="fname" 
-				value={client} 
+			<input type="text" id="fname" value={client} 
 				onChange={(e) => setClient(e.target.value)} 
 				placeholder="Digite um nome:"/>
 			<label>Sobrenome:</label>
-			<input type="text" 
-				id="sname"
-				value={client2}
+			<input type="text" id="sname" value={client2}
 				onChange={(e) => setClient2(e.target.value)} 
 				placeholder="Digite um sobrenome:" />
+			<br/>
 			<label>Email:</label>
-			<input type="email"
-				id="email"
-				value={mail}
+			<input type="email" id="email" value={mail}
 				onChange={(e) => setMail(e.target.value)}
 				placeholder="Digite um email:" />
+			<br/>
 			<label>CPF:</label>
-			<input type="text"
-				id="cpf"
-				value={clientCpf}
-				onChange={(e) => setClientCpf(e.target.value)}
-				maxLength="11" size="11" 
-				data-mask="999.999.999-99"
-				required placeholder="000.000.000-00"
+			<input type="text" id="cpf" value={clientCpf}
+				onChange={(e) => setClientCpf(e.target.value)} maxLength="11" size="11"  
+				data-mask="999.999.999-99" required placeholder="000.000.000-00"
 				pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" />
+			<br/>
+			<label>Data de Nascimento:</label>
+			<input type="email" id="data" value={data}
+				onChange={(e) => setData(e.target.value)}
+				placeholder="dd/mm/aaaa" />
+			<br/>
+
 
 			<button onClick={() => setEnviado(true)} >Enviar</button>
 			<p>Nome: {enviado && client + ' ' + client2}</p>
 			<p>E-mail: {enviado && mail}</p>
 			<p>CPF: {enviado && clientCpf}</p>
-			<p>Data de Nascimento: </p>
+			<p>Data de Nascimento: {enviado && data}</p>
 			<p>Login: </p>
 			<p>Senha: </p>
 		</>

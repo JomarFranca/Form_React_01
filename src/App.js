@@ -2,15 +2,31 @@
 import React, {useState} from 'react';
 
 function App() {
+
+	const [client, setClient] = useState();
+	const [client2, setClient2] = useState();
+	const [enviado, setEnviado] = useState(false);
+
 	return (
 
-		<form>
-			<h1>Preencha o formulário</h1>
+		<>
+			<h1>Cadastra-se</h1>
 			<label>Nome:</label>
-			<input type="text" id="fname" value="Digite seu nome:" />
-			<button onClick="click()" id="btn">Enviar</button>
-			{/* <input onClick="botao()" type="submit" name="btEnviar" id="btn" value="Enviar" /> */}
-		</form>
+			<input type="text" 
+				id="fname" 
+				value={client} 
+				onChange={(e) => setClient(e.target.value)} 
+				placeholder="Digite um nome:"/>
+			<label>Sobrenome:</label>
+			<input type="text" 
+				id="sname"
+				value={client2}
+				onChange={(e) => setClient2(e.target.value)} 
+				placeholder="Digite um sobrenome:" />
+
+			<button onClick={() => setEnviado(true)} >Enviar</button>
+			<p>Nome:{enviado && client + ' ' + client2}</p>
+		</>
 	);
 }
 

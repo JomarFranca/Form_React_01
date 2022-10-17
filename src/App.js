@@ -72,3 +72,12 @@ function formCad() {
 }
 
 export default formCad;
+
+// function App() {
+// 	const [values, setValues] = useState();
+// 	const handleChangeValues = (value) => {
+// 		setValues((prevValue) => ({
+// 			...prevValue,
+// 			[value.target.name]: value.target.value,
+// 		}));
+// 	};
